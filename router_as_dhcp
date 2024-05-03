@@ -1,0 +1,29 @@
+Router as DHCP
+en
+conf t
+int fa0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+ 
+ip dhcp?
+ip dhcp pool networkone
+default-router 192.168.1.1
+network 192.1.0 255.255.255.0
+exit
+no shutdown
+ 
+next check ip address assigned or not
+ 
+cli---
+int fa0/1
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+ 
+ip dhcp?
+ip dhcp pool networkone
+default-router 192.168.1.1
+network 192.1.0 255.255.255.0
+exit
+no shutdown
